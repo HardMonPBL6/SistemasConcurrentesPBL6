@@ -6,6 +6,9 @@ WORKDIR /build
 COPY pom.xml .
 COPY common/pom.xml common/
 COPY server/pom.xml server/
+# The aggregator pom.xml lists `client` as a module, so Maven needs its pom to
+# build the reactor model — even though `-pl server -am` never builds client.
+COPY client/pom.xml client/
 
 # Copy source directories
 COPY common/src common/src
