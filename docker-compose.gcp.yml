@@ -9,7 +9,7 @@ version: '3.8'
 
 services:
   kafka:
-    image: bitnami/kafka:3.7.0
+    image: soldevelo/kafka:3.7.1
     container_name: kafka-cluster
     restart: unless-stopped
     ports:
